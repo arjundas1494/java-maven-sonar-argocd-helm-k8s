@@ -69,6 +69,10 @@ Install Docker
 ```
 sudo yum update -y
 sudo amazon-linux-extras install docker -y
+
+sudo sysytemctl enable docker
+sudo sysytemctl start docker
+sudo sysytemctl status docker
 ```
 
 Install Jenkins
@@ -196,7 +200,10 @@ Hurray !! Access the application on `http://<ec2-instance-public-ip-address>:801
 ### Configuring SonarQube server
 
 ```
+sudo -i
+amazon-linux-extras install java-openjdk11 -y
 adduser sonarqube
+su - sonarqube
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
 unzip *
 chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
